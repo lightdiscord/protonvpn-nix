@@ -36,10 +36,10 @@ let
 		pull
 		fast-io
 
-		ca ${toString ./.vpn/ca.crt}
+		ca ${toString ./vpn/ca.crt}
 
 		key-direction 1
-		tls-auth ${toString ./.vpn/tls-auth.key}
+		tls-auth ${toString ./vpn/tls-auth.key}
 	'';
 in {
 	options.services.openvpn.providers.protonvpn = {
