@@ -21,7 +21,6 @@ password
 { config, pkgs, ... }:
 
 let
-	country = "fr"; # The server region you want to be connected to.
 	credentials = /path/to/credentials; # The path to your credential file.
 in {
 	imports = [
@@ -29,8 +28,14 @@ in {
 	];
 
   	services.openvpn.providers.protonvpn = {
-  	  enable = true;
-  	  inherit country credentials;
+		# The list of available regions can be found in the regions.nix file
+		countries = [
+			{ region = "fr"; autoStart = true  }
+			{ region = "us"; }
+			{ region = "ca"; }
+		];
+		
+		inherit credentials;
   	};
 }
 ```
