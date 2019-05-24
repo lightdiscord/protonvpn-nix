@@ -30,11 +30,11 @@ in {
   	services.openvpn.providers.protonvpn = {
 		# The list of available regions can be found in the regions.nix file
 		countries = [
-			{ region = "fr"; autoStart = true  }
+			{ region = "fr"; autoStart = true;  }
 			{ region = "us"; }
 			{ region = "ca"; }
 		];
-		
+
 		inherit credentials;
   	};
 }
